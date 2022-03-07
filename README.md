@@ -10,7 +10,7 @@ Por ello, el principal problema que se detecto, es la falta de un sistema para l
 ## Despliegue 📦
 Se necesita Oracle OpenJDK version 17.0.2 para ejecutar el archivo:
 
-[Sistema-Cine](https://github.com/CroodcekDeep/Sistema-Cine/blob/main/Sistema-Cine.jar)
+[StarCines.jar](https://github.com/GandhyCrush/proyectoCineDise-oSW/blob/main/StarCines.jar)
 
 ## Construido con 🛠️
 - [IntelliJ IDEA](https://www.jetbrains.com/es-es/idea/) - Enfocado para la parte lógica
