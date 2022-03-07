@@ -17,6 +17,6 @@ Se necesita Oracle OpenJDK version 17.0.2 para ejecutar el archivo:
 - [NetBeans](https://netbeans.apache.org/) - Enfocado para la parte gráfica
 
 ### Autores
-- [Gutemberg Mendoza](https://github.com/matardy)
+- [Kevin Fernando Caranqui Yaguarshungo](https://github.com/FernandoCaranqui)
+- [Gandhy Gabriel García Castañed](https://github.com/GandhyCrush)
 - [Ginno Taimal](https://github.com/CroodcekDeep)
-- [Pablo Vélez](https://github.com/PabloVelez08)
