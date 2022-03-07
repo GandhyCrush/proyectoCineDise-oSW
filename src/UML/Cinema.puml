@@ -1,0 +1,158 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Cliente {
+    -nombres: String
+    -apellidos: String
+    -cedula: String
+    -direccion: String
+    -telf: String
+    '+Cliente(nombres: String, apellidos: String, cedula: String, direccion: String, telefono: String)
+    '+getNombres(): String
+    '+setNombres(nombres: String)
+    '+getApellidos(): String
+    '+setApellidos(apellidos: String)
+    '+getCédula(): String
+    '+setCédula(cedula: String)
+    '+getDirección(): String
+    '+setDirección(direccion: String)
+    '+getTelf(): String
+    '+setTelf(telf: String)
+    'toString(): String
+}
+
+class Factura{
+    -nombreEmpresa: String = "Star Cines"
+    -ruc: String = "1768156470004"
+    -fecha: String
+    -total: double
+    -orden: Orden
+    '+Factura(orden: Orden)
+    '+getFecha(): String
+    '+setFecha(fecha: String)
+    '+getTotal(): double
+    '+setTotal(total: double)
+    '+getRuc(): String
+    '+setRuc(ruc: String)
+    '+getOrden(): Orden
+    '+setOrden(orden: Orden)
+    '+getNombreEmpresa(): String
+    '+setNombreEmpresa(nombreEmpresa: String)
+    '+toString(): String
+}
+
+class Orden {
+    -cliente: Cliente
+    -detallesOrden: ArrayList<DetalleOrden>
+    '+Orden(cliente: Cliente)
+    '+getDetallesOrden(): ArrayList<DetalleOrden>
+    '+setDetallesOrden(detallesOrden: ArrayList<DetalleOrden>)
+    '+getCliente(): Cliente
+    '+setCliente(cliente: Cliente)
+    +añadirDetalleOrden(detalle: DetalleOrden)
+    +calcularTotal(): double
+    '+toString(): String
+}
+
+class DetalleOrden {
+    -cantidad: int
+    -producto: String
+    -precioUnit: double
+    -pvp: double
+    +DetalleOrden(cantidad: int, producto: String, precioUnit: double, pvp: double)
+    '+toString(): String
+}
+
+' Comprar Comida
+abstract class Producto{
+    #nombre: String
+    #precio: double
+    #tamaño: String
+
+    +getNombre(): String
+    +setNombre(nombre: String)
+    +getTamaño(): String
+    +setTamaño(tamanio: String)
+    +getPrecio(): double {abstract}
+    +setPrecio(precio: double)
+    '+toString(): String
+}
+
+abstract class Bebida{
+    #sabor: String
+
+    +getSabor(): String
+    +setSabor(sabor: String)
+}
+
+abstract class Snack {
+
+}
+
+abstract class Extra{
+    #snack: Snack
+    #descripción: String
+
+    '+toString(): String
+}
+
+class Canguil{
+    +Canguil(tamanio: String)
+    +getPrecio(): double
+}
+
+class Nacho{
+    +Nacho(tamanio: String)
+    +getPrecio(): double
+}
+
+class HotDog{
+    '+HotDog()
+    +getPrecio(): double
+}
+
+class Vaso {
+    '+Vaso(tamanio: String, sabor: String)
+    +getPrecio(): double
+    '+toString(): String
+}
+
+class Botella {
+    '+Botella(sabor: String)
+    +getPrecio(): double
+    '+toString(): String
+}
+
+class CarneMolida {
+    '+CarneMolida(snack: Snack)
+    +getPrecio(): double
+}
+
+class Chile {
+    '+Chile(snack: Snack)
+    +getPrecio(): double
+}
+
+' Patrón de Diseño -> Decorator
+Orden "1" o- "*" DetalleOrden: contiene
+
+Factura "1"->"1" Orden: tiene
+
+Producto <|-- Snack
+Producto <|-- Bebida
+
+Snack <|-- Extra
+Snack <--o Extra
+Snack <|-- Nacho
+Snack <|-- HotDog
+Snack <|-- Canguil
+Extra <|-- CarneMolida
+Extra <|-- Chile
+
+Bebida <|-- Vaso
+Bebida <|-- Botella
+
+DetalleOrden "1" --> "1" Producto: usa
+
+Orden "1"-->"1" Cliente: tiene
+@enduml
