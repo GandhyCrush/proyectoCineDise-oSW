@@ -19,4 +19,4 @@ Se necesita Oracle OpenJDK version 17.0.2 para ejecutar el archivo:
 ### Autores
 - [Kevin Fernando Caranqui Yaguarshungo](https://github.com/FernandoCaranqui)
 - [Gandhy Gabriel García Castañed](https://github.com/GandhyCrush)
-- [Ginno Taimal](https://github.com/CroodcekDeep)
+- [Ginno Sebastián Taimal Villarroel](https://github.com/CroodcekDeep)
